@@ -16,5 +16,8 @@
   },
   "0.0.6": {
     "en": "Schedule and timer requests added"
+  },
+  "1.0.0": {
+    "en": "First release"
   }
 }
