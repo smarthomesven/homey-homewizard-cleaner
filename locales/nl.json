@@ -1,0 +1,10 @@
+{
+  "pair": {
+    "email": "Emailadres",
+    "password": "Wachtwoord",
+    "failed": "Ongeldige inloggegevens",
+    "save": "Inloggen",
+    "saving": "Inloggen",
+    "error": "Er is iets misgegaan, probeer het opnieuw."
+  }
+}
