@@ -121,6 +121,7 @@ module.exports = class DeluxeDevice extends Homey.Device {
             }
           });
           const status = statusResponse.data.data;
+          await this.setAvailable();
           if (status.battery_percentage && this.hasCapability('measure_battery')) {
             this.setCapabilityValue('measure_battery', status.battery_percentage);
           }

@@ -86,13 +86,23 @@
         "en": "Robot Vacuum Deluxe"
       },
       "class": "vacuumcleaner",
-      "capabilities": [],
+      "capabilities": [
+        "measure_battery",
+        "state",
+        "dock",
+        "start"
+      ],
       "platforms": [
         "local"
       ],
       "connectivity": [
         "cloud"
       ],
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      },
       "images": {
         "small": "/drivers/deluxe/assets/images/small.png",
         "large": "/drivers/deluxe/assets/images/large.png",
