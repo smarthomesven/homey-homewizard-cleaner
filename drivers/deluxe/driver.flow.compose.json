@@ -1,0 +1,27 @@
+{
+    "triggers": [
+        {
+            "id": "state_changed",
+            "title": {
+                "en": "State changed",
+                "nl": "Status veranderd"
+            }
+        }
+    ],
+    "actions": [
+        {
+            "id": "dock",
+            "title": {
+                "en": "Return to dock",
+                "nl": "Terug naar dockingstation"
+            }
+        },
+        {
+            "id": "start",
+            "title": {
+                "en": "Start",
+                "nl": "Starten"
+            }
+        }
+    ]
+}

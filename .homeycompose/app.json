@@ -1,0 +1,34 @@
+{
+  "id": "com.homewizard.cleaner",
+  "version": "0.0.6",
+  "compatibility": ">=12.4.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "HomeWizard Cleaner"
+  },
+  "description": {
+    "en": "A cleaner home starts with HomeWizard Cleaner",
+    "nl": "Een schoner huis begint met HomeWizard Cleaner"
+  },
+  "brandColor": "#9066DF",
+  "category": [
+    "appliances"
+  ],
+  "source": "https://github.com/smarthomesven/homey-homewizard-cleaner",
+  "bugs": {
+    "url": "https://github.com/smarthomesven/homey-homewizard-cleaner/issues"
+  },
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Sven Serlier",
+    "email": "sven@dypodex.com"
+  }
+}

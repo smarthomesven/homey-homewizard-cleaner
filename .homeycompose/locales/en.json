@@ -1,0 +1,10 @@
+{
+    "pair": {
+        "email": "Email address",
+        "password": "Password",
+        "failed": "Invalid credentials",
+        "save": "Login",
+        "saving": "Logging in",
+        "error": "Something went wrong, try again"
+    }
+}

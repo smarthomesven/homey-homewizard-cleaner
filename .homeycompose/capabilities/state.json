@@ -1,0 +1,41 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "State",
+    "nl": "Status"
+  },
+  "uiComponent": "sensor",
+  "icon": "/assets/state.svg",
+  "getable": true,
+  "setable": false,
+  "values": [
+    {
+      "id": "charging",
+      "title": { 
+        "en": "Charging",
+        "nl": "Opladen"
+      }
+    },
+    {
+      "id": "finished_charging",
+      "title": { 
+        "en": "Finished charging",
+        "nl": "Opladen voltooid"
+      }
+    },
+    {
+      "id": "working",
+      "title": { 
+        "en": "Running",
+        "nl": "Stofzuigen"
+      }
+    },
+    {
+      "id": "unknown",
+      "title": { 
+        "en": "Unknown",
+        "nl": "Onbekend"
+      }
+    }
+  ]
+}
