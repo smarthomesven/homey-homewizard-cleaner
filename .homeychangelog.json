@@ -31,5 +31,8 @@
   },
   "1.0.4": {
     "en": "Added more states"
+  },
+  "1.0.5": {
+    "en": "Fix pairing issue"
   }
 }
