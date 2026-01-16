@@ -73,7 +73,8 @@ module.exports = class MyDriver extends Homey.Driver {
           },
           store: {
             id: link.identifier,
-            endpoint: link.endpoint
+            endpoint: link.endpoint,
+            state_update_16012025_migration_complete: true,
           },
         }));
       } catch (error) {
