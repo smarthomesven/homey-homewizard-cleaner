@@ -28,5 +28,8 @@
   },
   "1.0.3": {
     "en": "Fix battery level"
+  },
+  "1.0.4": {
+    "en": "Added more states"
   }
 }
