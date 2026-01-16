@@ -194,6 +194,27 @@
           }
         },
         {
+          "id": "standby",
+          "title": {
+            "en": "Idle",
+            "nl": "Inactief"
+          }
+        },
+        {
+          "id": "malfunction",
+          "title": {
+            "en": "Fault",
+            "nl": "Storing"
+          }
+        },
+        {
+          "id": "docking",
+          "title": {
+            "en": "Docking",
+            "nl": "Terugkeren naar dock"
+          }
+        },
+        {
           "id": "unknown",
           "title": {
             "en": "Unknown",

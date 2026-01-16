@@ -11,18 +11,26 @@ module.exports = class DeluxeDevice extends Homey.Device {
   async onInit() {
     try {
       this.log('DeluxeDevice has been initialized');
+      // migrations
       if (!this.hasCapability('dock')) {
-        this.addCapability('dock');
+        await this.addCapability('dock');
       }
       if (!this.hasCapability('start')) {
-        this.addCapability('start');
+        await this.addCapability('start');
       }
       if (!this.hasCapability('state')) {
-        this.addCapability('state');
+        await this.addCapability('state');
       }
       if (!this.hasCapability('measure_battery')) {
-        this.addCapability('measure_battery');
+        await this.addCapability('measure_battery');
       }
+
+      if (!this.getStoreValue('state_update_16012025_migration_complete')) {
+        await this.removeCapability('state');
+        await this.addCapability('state');
+        this.setStoreValue('state_update_16012025_migration_complete', true);
+      }
+
       const dockAction = this.homey.flow.getActionCard('dock');
       const startAction = this.homey.flow.getActionCard('start');
       this.registerCapabilityListener('dock', async (value) => {
@@ -125,7 +133,7 @@ module.exports = class DeluxeDevice extends Homey.Device {
           if (status.battery_percentage && this.hasCapability('measure_battery')) {
             this.setCapabilityValue('measure_battery', status.battery_percentage);
           }
-          if (status.status && this.hasCapability('state') && (status.status === "working" || status.status === "finished_charging" || status.status === "charging")) {
+          if (status.status && this.hasCapability('state') && (status.status === "working" || status.status === "finished_charging" || status.status === "charging" || status.status === "standby" || status.status === "docking" || status.status === "malfunction")) {
             this.setCapabilityValue('state', status.status);
           } else if (status.status && this.hasCapability('state')) {
             this.setCapabilityValue('state', 'unknown');
