@@ -40,5 +40,8 @@
   },
   "1.0.7": {
     "en": "Added icon"
+  },
+  "1.0.8": {
+    "en": "Update dependencies"
   }
 }
