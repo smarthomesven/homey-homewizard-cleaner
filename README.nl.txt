@@ -2,5 +2,5 @@ Voeg je Princess Deluxe-robotstofzuiger toe aan Homey en maak gebruik van de vol
 
 - Dock je stofzuiger
 - Start je stofzuiger
-- Bekijk de state
+- Bekijk de status
 - Bekijk het batterijniveau
