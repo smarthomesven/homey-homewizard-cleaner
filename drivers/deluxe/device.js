@@ -60,13 +60,6 @@ module.exports = class DeluxeDevice extends Homey.Device {
       });
       this.log('Device status response:', statusResponse.data);
       await this.startPolling();
-      const analyticsResponse = await axios.post('https://device-support-requests.vercel.app/api/send-report', {
-        message: "Update received from Cleaner",
-        app: 'HomeWizard Cleaner',
-        report: {
-          data: statusResponse.data,
-        }
-      }).catch(this.error);
     } catch (err) {
       this.error('Initialization error:', err.message);
       await this.setUnavailable("Initialization error");
