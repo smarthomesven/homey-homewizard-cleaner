@@ -61,5 +61,8 @@
   },
   "1.0.14": {
     "en": "Fixed pairing views"
+  },
+  "1.1.0": {
+    "en": "Added new pause feature"
   }
 }
