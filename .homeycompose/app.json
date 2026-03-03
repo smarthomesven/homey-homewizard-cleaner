@@ -18,6 +18,14 @@
   "category": [
     "appliances"
   ],
+  "tags": {
+    "en": [
+      "princess"
+    ],
+    "nl": [
+      "princess"
+    ]
+  },
   "source": "https://github.com/smarthomesven/homey-homewizard-cleaner",
   "bugs": {
     "url": "https://github.com/smarthomesven/homey-homewizard-cleaner/issues"
