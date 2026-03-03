@@ -165,7 +165,7 @@ module.exports = class DeluxeDevice extends Homey.Device {
 
           this.log('Polled device status response:', statusResponse.data);
         } catch (err) {
-          if (err.response && err.response.status === 401) {
+          if (err.response?.status === 401) {
             this.error('Invalid token.');
             const token = await this.getToken();
             return;
