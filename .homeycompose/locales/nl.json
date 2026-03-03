@@ -6,5 +6,8 @@
         "save": "Inloggen",
         "saving": "Inloggen",
         "error": "Er is iets misgegaan, probeer het opnieuw."
+    },
+    "errors": {
+        "unreachable": "Apparaat onbereikbaar"
     }
 }

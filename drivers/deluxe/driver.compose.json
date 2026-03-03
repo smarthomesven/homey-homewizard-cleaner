@@ -8,6 +8,7 @@
     "state",
     "dock",
     "start",
+    "suspend",
     "alarm_bin_full",
     "alarm_bin_missing"
   ],

@@ -31,6 +31,10 @@ module.exports = class DeluxeDevice extends Homey.Device {
         await this.addCapability('alarm_bin_missing');
       }
 
+      if (!this.hasCapability('suspend')) {
+        await this.addCapability('suspend');
+      }
+
       if (!this.getStoreValue('state_update_16012025_migration_complete')) {
         await this.removeCapability('state');
         await this.addCapability('state');
@@ -39,6 +43,7 @@ module.exports = class DeluxeDevice extends Homey.Device {
 
       const dockAction = this.homey.flow.getActionCard('dock');
       const startAction = this.homey.flow.getActionCard('start');
+      const suspendAction = this.homey.flow.getActionCard('suspend');
       this.registerCapabilityListener('dock', async (value) => {
         if (value === true) {
           await this.sendCommand('charge');
@@ -49,12 +54,21 @@ module.exports = class DeluxeDevice extends Homey.Device {
           await this.sendCommand('work');
         }
       });
+      this.registerCapabilityListener('suspend', async (value) => {
+        if (value === true) {
+          await this.sendCommand('suspend');
+        }
+      });
       dockAction.registerRunListener(async (args, state) => {
         await this.sendCommand('charge');
         return true;
       });
       startAction.registerRunListener(async (args, state) => {
         await this.sendCommand('work');
+        return true;
+      });
+      suspendAction.registerRunListener(async (args, state) => {
+        await this.sendCommand('suspend');
         return true;
       });
       const endpoint = this.getStoreValue('endpoint');
@@ -115,7 +129,6 @@ module.exports = class DeluxeDevice extends Homey.Device {
     }
   }
 
-
   async startPolling() {
     this.pollInterval = this.homey.setInterval(async () => {
       try {
@@ -175,12 +188,10 @@ module.exports = class DeluxeDevice extends Homey.Device {
         }
       } catch (err) {
         this.error('Polling error:', err.message);
-        await this.setUnavailable("Device unreachable");
+        await this.setUnavailable(this.homey.__('errors.unreachable'));
       }
     }, 6000);
   }
-
-  
 
   /**
    * onAdded is called when the user adds the device, called just after pairing.
@@ -198,7 +209,7 @@ module.exports = class DeluxeDevice extends Homey.Device {
    * @returns {Promise<string|void>} return a custom message that will be displayed
    */
   async onSettings({ oldSettings, newSettings, changedKeys }) {
-    this.log('MyDevice settings where changed');
+    this.log('Robot Vacuum Deluxe settings where changed');
   }
 
   /**
@@ -207,7 +218,7 @@ module.exports = class DeluxeDevice extends Homey.Device {
    * @param {string} name The new name
    */
   async onRenamed(name) {
-    this.log('MyDevice was renamed');
+    this.log('Robot Vacuum Deluxe was renamed');
   }
 
   /**
@@ -217,7 +228,6 @@ module.exports = class DeluxeDevice extends Homey.Device {
     if (this.pollInterval) {
       this.homey.clearInterval(this.pollInterval);
     }
-    this.log('MyDevice has been deleted');
+    this.log('Robot Vacuum Deluxe has been deleted');
   }
-
 };

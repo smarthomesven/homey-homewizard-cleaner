@@ -86,6 +86,20 @@
             "filter": "driver_id=deluxe"
           }
         ]
+      },
+      {
+        "id": "suspend",
+        "title": {
+          "en": "Pause",
+          "nl": "Pauzeren"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=deluxe"
+          }
+        ]
       }
     ]
   },
@@ -100,6 +114,7 @@
         "state",
         "dock",
         "start",
+        "suspend",
         "alarm_bin_full",
         "alarm_bin_missing"
       ],
@@ -232,6 +247,18 @@
           }
         }
       ]
+    },
+    "suspend": {
+      "type": "boolean",
+      "title": {
+        "en": "Pause",
+        "nl": "Pauze"
+      },
+      "getable": false,
+      "setable": true,
+      "uiComponent": "button",
+      "uiQuickAction": false,
+      "icon": "/assets/suspend.svg"
     }
   }
 }

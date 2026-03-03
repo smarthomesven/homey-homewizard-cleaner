@@ -6,5 +6,8 @@
         "save": "Login",
         "saving": "Logging in",
         "error": "Something went wrong, try again"
+    },
+    "errors": {
+        "unreachable": "Device unreachable"
     }
 }
