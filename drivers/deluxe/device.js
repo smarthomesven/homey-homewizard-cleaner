@@ -24,6 +24,12 @@ module.exports = class DeluxeDevice extends Homey.Device {
       if (!this.hasCapability('measure_battery')) {
         await this.addCapability('measure_battery');
       }
+      if (!this.hasCapability('alarm_bin_full')) {
+        await this.addCapability('alarm_bin_full');
+      }
+      if (!this.hasCapability('alarm_bin_missing')) {
+        await this.addCapability('alarm_bin_missing');
+      }
 
       if (!this.getStoreValue('state_update_16012025_migration_complete')) {
         await this.removeCapability('state');
@@ -125,6 +131,16 @@ module.exports = class DeluxeDevice extends Homey.Device {
           await this.setAvailable();
           if (status.battery_percentage && this.hasCapability('measure_battery')) {
             this.setCapabilityValue('measure_battery', status.battery_percentage);
+          }
+          if (status.faults?.includes('bin_full') && this.hasCapability('alarm_bin_full')) {
+            this.setCapabilityValue('alarm_bin_full', true);
+          } else {
+            this.setCapabilityValue('alarm_bin_full', false);
+          }
+          if (status.faults?.includes('bin_missing') && this.hasCapability('alarm_bin_missing')) {
+            this.setCapabilityValue('alarm_bin_missing', true);
+          } else {
+            this.setCapabilityValue('alarm_bin_missing', false);
           }
           if (status.status && this.hasCapability('state') && (status.status === "working" || status.status === "finished_charging" || status.status === "charging" || status.status === "standby" || status.status === "docking" || status.status === "malfunction")) {
             this.setCapabilityValue('state', status.status);

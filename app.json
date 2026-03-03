@@ -99,7 +99,9 @@
         "measure_battery",
         "state",
         "dock",
-        "start"
+        "start",
+        "alarm_bin_full",
+        "alarm_bin_missing"
       ],
       "platforms": [
         "local"
