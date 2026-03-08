@@ -190,7 +190,7 @@ module.exports = class DeluxeDevice extends Homey.Device {
         this.error('Polling error:', err.message);
         await this.setUnavailable(this.homey.__('errors.unreachable'));
       }
-    }, 6000);
+    }, 10000);
   }
 
   /**
