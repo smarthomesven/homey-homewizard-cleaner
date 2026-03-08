@@ -67,5 +67,8 @@
   },
   "1.1.1": {
     "en": "Improved pairing views"
+  },
+  "1.1.2": {
+    "en": "Changed polling interval from 6s to 10s"
   }
 }
