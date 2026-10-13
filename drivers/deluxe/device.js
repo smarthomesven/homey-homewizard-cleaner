@@ -67,7 +67,7 @@ module.exports = class DeluxeDevice extends Homey.Device {
       await this.startPolling();
     } catch (err) {
       this.error('Initialization error:', err.message);
-      await this.setUnavailable("Initialization error");
+      await this.setUnavailable(this.homey.__("errors.init"));
     }
   }
 

@@ -10,6 +10,7 @@
     "nopass": "Enter a password"
   },
   "errors": {
-    "unreachable": "Device unreachable"
+    "unreachable": "Device unreachable",
+    "init": "An unexpected error occured. Please contact the app developer."
   }
 }

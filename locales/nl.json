@@ -10,6 +10,7 @@
     "nopass": "Voer een wachtwoord in"
   },
   "errors": {
-    "unreachable": "Apparaat onbereikbaar"
+    "unreachable": "Apparaat onbereikbaar",
+    "init": "Er is een onverwachte fout opgetreden. Neem contact op met de ontwikkelaar."
   }
 }
